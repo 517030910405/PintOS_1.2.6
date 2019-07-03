@@ -1,0 +1,454 @@
+make[1]: 警告：文件“Makefile”的修改时间在未来 0.68 秒后
+In file included from ../../threads/thread.h:7:0,
+                 from ../../threads/init.c:24:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+In file included from ../../threads/init.c:41:0:
+../../threads/myio.h:6:5: warning: no previous prototype for ‘deal_with_input’ [-Wmissing-prototypes]
+ int deal_with_input(char * str, int *pos, char c,int show,int len){
+     ^~~~~~~~~~~~~~~
+../../threads/myio.h:21:5: warning: no previous prototype for ‘get_string’ [-Wmissing-prototypes]
+ int get_string(char * str,char stopsign,int show,int len){
+     ^~~~~~~~~~
+../../threads/myio.h: In function ‘get_string’:
+../../threads/myio.h:21:32: warning: unused parameter ‘stopsign’ [-Wunused-parameter]
+ int get_string(char * str,char stopsign,int show,int len){
+                                ^~~~~~~~
+../../threads/init.c: In function ‘pintos_init’:
+../../threads/init.c:141:5: warning: format not a string literal and no format arguments [-Wformat-security]
+     printf(welcome);
+     ^~~~~~
+../../threads/init.c:155:6: warning: format not a string literal and no format arguments [-Wformat-security]
+      printf(welcome);
+      ^~~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../threads/thread.c:1:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+In file included from ../../threads/thread.c:2:0:
+../../threads/real.c:7:7: warning: type defaults to ‘int’ in declaration of ‘W’ [-Wimplicit-int]
+ const W=1<<14;
+       ^
+../../threads/thread.c:76:6: warning: no previous prototype for ‘thread_cmp’ [-Wmissing-prototypes]
+ bool thread_cmp(const struct list_elem *a,const struct list_elem*b){
+      ^~~~~~~~~~
+../../threads/thread.c: In function ‘thread_cmp’:
+../../threads/thread.c:80:36: warning: passing argument 1 of ‘thread_get_donate_priority’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  return thread_get_donate_priority(av)>thread_get_donate_priority(bv);
+                                    ^~
+In file included from ../../threads/thread.c:1:0:
+../../threads/thread.h:156:5: note: expected ‘struct thread *’ but argument is of type ‘const struct thread *’
+ int thread_get_donate_priority (struct thread * t);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../../threads/thread.c:80:67: warning: passing argument 1 of ‘thread_get_donate_priority’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  return thread_get_donate_priority(av)>thread_get_donate_priority(bv);
+                                                                   ^~
+In file included from ../../threads/thread.c:1:0:
+../../threads/thread.h:156:5: note: expected ‘struct thread *’ but argument is of type ‘const struct thread *’
+ int thread_get_donate_priority (struct thread * t);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../../threads/thread.c: At top level:
+../../threads/thread.c:82:6: warning: no previous prototype for ‘insert_thread_in_readylist’ [-Wmissing-prototypes]
+ void insert_thread_in_readylist(const struct list_elem*e){
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+../../threads/thread.c: In function ‘insert_thread_in_readylist’:
+../../threads/thread.c:83:62: warning: passing argument 2 of ‘list_insert_ordered’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  if(!list_empty(&ready_list))list_insert_ordered(&ready_list,e,thread_cmp,NULL);
+                                                              ^
+In file included from ../../threads/thread.h:5:0,
+                 from ../../threads/thread.c:1:
+../../lib/kernel/list.h:172:6: note: expected ‘struct list_elem *’ but argument is of type ‘const struct list_elem *’
+ void list_insert_ordered (struct list *, struct list_elem *,
+      ^~~~~~~~~~~~~~~~~~~
+../../threads/thread.c:83:64: warning: passing argument 3 of ‘list_insert_ordered’ from incompatible pointer type [-Wincompatible-pointer-types]
+  if(!list_empty(&ready_list))list_insert_ordered(&ready_list,e,thread_cmp,NULL);
+                                                                ^~~~~~~~~~
+In file included from ../../threads/thread.h:5:0,
+                 from ../../threads/thread.c:1:
+../../lib/kernel/list.h:172:6: note: expected ‘_Bool (*)(const struct list_elem *, const struct list_elem *, void *)’ but argument is of type ‘_Bool (*)(const struct list_elem *, const struct list_elem *)’
+ void list_insert_ordered (struct list *, struct list_elem *,
+      ^~~~~~~~~~~~~~~~~~~
+../../threads/thread.c:84:34: warning: passing argument 2 of ‘list_push_back’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  else list_push_back(&ready_list,e);
+                                  ^
+In file included from ../../threads/thread.h:5:0,
+                 from ../../threads/thread.c:1:
+../../lib/kernel/list.h:144:6: note: expected ‘struct list_elem *’ but argument is of type ‘const struct list_elem *’
+ void list_push_back (struct list *, struct list_elem *);
+      ^~~~~~~~~~~~~~
+../../threads/thread.c: At top level:
+../../threads/thread.c:88:6: warning: no previous prototype for ‘thread_check_yield’ [-Wmissing-prototypes]
+ void thread_check_yield(void){
+      ^~~~~~~~~~~~~~~~~~
+../../threads/thread.c: In function ‘thread_check_yield’:
+../../threads/thread.c:91:27: warning: implicit declaration of function ‘thread_get_certain_priority’; did you mean ‘thread_get_donate_priority’? [-Wimplicit-function-declaration]
+  if(thread_get_priority()<thread_get_certain_priority(list_entry(list_begin(&ready_list),struct thread,elem)))
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                           thread_get_donate_priority
+../../threads/thread.c: At top level:
+../../threads/thread.c:453:5: warning: no previous prototype for ‘thread_get_certain_priority’ [-Wmissing-prototypes]
+ int thread_get_certain_priority(const struct thread*t){
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+../../threads/thread.c:459:6: warning: no previous prototype for ‘thread_update_priority’ [-Wmissing-prototypes]
+ void thread_update_priority(struct thread* t){
+      ^~~~~~~~~~~~~~~~~~~~~~
+../../threads/thread.c: In function ‘init_thread’:
+../../threads/thread.c:608:13: warning: passing argument 1 of ‘list_init’ from incompatible pointer type [-Wincompatible-pointer-types]
+   list_init(&t->wait_lock);
+             ^
+In file included from ../../threads/thread.h:5:0,
+                 from ../../threads/thread.c:1:
+../../lib/kernel/list.h:125:6: note: expected ‘struct list *’ but argument is of type ‘struct lock **’
+ void list_init (struct list *);
+      ^~~~~~~~~
+../../threads/thread.c: In function ‘timer_checker’:
+../../threads/thread.c:733:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(t->sleep_until<timer_tick)thread_unblock(t);
+                   ^
+../../threads/thread.c: At top level:
+../../threads/thread.c:735:6: warning: no previous prototype for ‘timer_update’ [-Wmissing-prototypes]
+ void timer_update(int64_t timer_tick){
+      ^~~~~~~~~~~~
+../../threads/thread.c: In function ‘timer_update’:
+../../threads/thread.c:755:27: warning: passing argument 2 of ‘list_sort’ from incompatible pointer type [-Wincompatible-pointer-types]
+    list_sort(&ready_list, thread_cmp, NULL);
+                           ^~~~~~~~~~
+In file included from ../../threads/thread.h:5:0,
+                 from ../../threads/thread.c:1:
+../../lib/kernel/list.h:170:6: note: expected ‘_Bool (*)(const struct list_elem *, const struct list_elem *, void *)’ but argument is of type ‘_Bool (*)(const struct list_elem *, const struct list_elem *)’
+ void list_sort (struct list *,
+      ^~~~~~~~~
+../../threads/thread.c:761:24: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+       if(t->sleep_until<=timer_tick)thread_unblock(t);
+                        ^~
+At top level:
+../../threads/thread.c:731:13: warning: ‘timer_checker’ defined but not used [-Wunused-function]
+ static void timer_checker(struct thread *t,int64_t timer_tick){
+             ^~~~~~~~~~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../threads/interrupt.c:9:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../threads/synch.c:33:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+../../threads/synch.c: In function ‘sema_up’:
+../../threads/synch.c:146:2: warning: implicit declaration of function ‘thread_check_yield’; did you mean ‘thread_yield’? [-Wimplicit-function-declaration]
+  thread_check_yield();
+  ^~~~~~~~~~~~~~~~~~
+  thread_yield
+../../threads/synch.c: In function ‘lock_acquire’:
+../../threads/synch.c:232:15: warning: unused variable ‘pre_lock’ [-Wunused-variable]
+  struct lock *pre_lock;
+               ^~~~~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../devices/timer.c:9:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+../../devices/timer.c: In function ‘timer_interrupt’:
+../../devices/timer.c:182:3: warning: implicit declaration of function ‘timer_update’; did you mean ‘timer_udelay’? [-Wimplicit-function-declaration]
+   timer_update(ticks);
+   ^~~~~~~~~~~~
+   timer_udelay
+In file included from ../../threads/thread.h:7:0,
+                 from ../../devices/serial.c:9:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../devices/intq.c:3:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../devices/shutdown.c:8:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+../../lib/debug.c: In function ‘debug_backtrace’:
+../../lib/debug.c:19:14: warning: calling ‘__builtin_frame_address’ with a nonzero argument is unsafe [-Wframe-address]
+   for (frame = __builtin_frame_address (1);
+        ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../../lib/string.c:2:0:
+../../lib/string.c: In function ‘strchr’:
+../../lib/debug.h:32:12: warning: nonnull argument ‘string’ compared to NULL [-Wnonnull-compare]
+         if (CONDITION) { } else {                               \
+            ^
+../../lib/string.c:117:3: note: in expansion of macro ‘ASSERT’
+   ASSERT (string != NULL);
+   ^~~~~~
+../../lib/string.c: In function ‘strlen’:
+../../lib/debug.h:32:12: warning: nonnull argument ‘string’ compared to NULL [-Wnonnull-compare]
+         if (CONDITION) { } else {                               \
+            ^
+../../lib/string.c:297:3: note: in expansion of macro ‘ASSERT’
+   ASSERT (string != NULL);
+   ^~~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../lib/kernel/debug.c:10:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+../../lib/kernel/debug.c: In function ‘print_stacktrace’:
+../../lib/kernel/debug.c:82:13: warning: calling ‘__builtin_frame_address’ with a nonzero argument is unsafe [-Wframe-address]
+       frame = __builtin_frame_address (1);
+       ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../userprog/process.h:4,
+                 from ../../userprog/process.c:1:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+../../userprog/process.c: In function ‘start_process’:
+../../userprog/process.c:71:17: warning: format ‘%s’ expects argument of type ‘char *’, but argument 2 has type ‘void *’ [-Wformat=]
+   printf("name:%s\n",file_name_);
+                ~^
+                %p
+../../userprog/process.c:85:11: warning: initialization from incompatible pointer type [-Wincompatible-pointer-types]
+   char*pp=p;
+           ^
+../../userprog/process.c:88:4: warning: assignment from incompatible pointer type [-Wincompatible-pointer-types]
+   p=pp-((int)pp&3);
+    ^
+../../userprog/process.c:93:33: warning: suggest parentheses around ‘&&’ within ‘||’ [-Wparentheses]
+     if(i==0||file_name[i-1]==' '&&file_name[i]!=' '){
+              ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
+../../userprog/process.c:94:13: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+       *(--p)=pp+i;
+             ^
+../../userprog/process.c:97:9: warning: assignment makes integer from pointer without a cast [-Wint-conversion]
+   *(p-1)=p;
+         ^
+In file included from ../../threads/thread.h:7:0,
+                 from ../../userprog/exception.c:6:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+In file included from ../../threads/thread.h:7:0,
+                 from ../../userprog/syscall.h:5,
+                 from ../../userprog/syscall.c:1:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+../../userprog/syscall.c: In function ‘syscall_init’:
+../../userprog/syscall.c:14:2: warning: implicit declaration of function ‘lock_init’; did you mean ‘list_init’? [-Wimplicit-function-declaration]
+  lock_init(&filesys_lock);
+  ^~~~~~~~~
+  list_init
+../../userprog/syscall.c: In function ‘syscall_handler’:
+../../userprog/syscall.c:36:12: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int esp = f -> esp;
+            ^
+../../userprog/syscall.c:39:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int argv1 = sp+4;
+              ^~
+../../userprog/syscall.c:40:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int argv2 = sp+8;
+              ^~
+../../userprog/syscall.c:41:14: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+  int argv3 = sp +12;
+              ^~
+../../userprog/syscall.c:41:6: warning: unused variable ‘argv3’ [-Wunused-variable]
+  int argv3 = sp +12;
+      ^~~~~
+../../userprog/syscall.c:40:6: warning: unused variable ‘argv2’ [-Wunused-variable]
+  int argv2 = sp+8;
+      ^~~~~
+../../userprog/syscall.c:39:6: warning: unused variable ‘argv1’ [-Wunused-variable]
+  int argv1 = sp+4;
+      ^~~~~
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:64:6: warning: no previous prototype for ‘syscall_valid_vaddr’ [-Wmissing-prototypes]
+ bool syscall_valid_vaddr(const void *vaddr, bool write){
+      ^~~~~~~~~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_valid_vaddr’:
+../../userprog/syscall.c:67:6: warning: implicit declaration of function ‘pagedir_get_page’ [-Wimplicit-function-declaration]
+  if (pagedir_get_page(thread_current()->pagedir, vaddr)==NULL) return false;
+      ^~~~~~~~~~~~~~~~
+../../userprog/syscall.c:67:56: warning: comparison between pointer and integer
+  if (pagedir_get_page(thread_current()->pagedir, vaddr)==NULL) return false;
+                                                        ^~
+../../userprog/syscall.c:64:50: warning: unused parameter ‘write’ [-Wunused-parameter]
+ bool syscall_valid_vaddr(const void *vaddr, bool write){
+                                                  ^~~~~
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:71:6: warning: no previous prototype for ‘syscall_check_user_string’ [-Wmissing-prototypes]
+ bool syscall_check_user_string(const char* name){
+      ^~~~~~~~~~~~~~~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_check_user_string’:
+../../userprog/syscall.c:74:15: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  char * str = name;
+               ^~~~
+../../userprog/syscall.c:75:6: warning: unused variable ‘len’ [-Wunused-variable]
+  int len = strlen(str);
+      ^~~
+../../userprog/syscall.c: In function ‘syscall_open’:
+../../userprog/syscall.c:91:2: warning: implicit declaration of function ‘lock_acquire’ [-Wimplicit-function-declaration]
+  lock_acquire(&filesys_lock);
+  ^~~~~~~~~~~~
+../../userprog/syscall.c:92:27: warning: implicit declaration of function ‘filesys_open’; did you mean ‘file_open’? [-Wimplicit-function-declaration]
+  struct file * tmp_file = filesys_open(name);
+                           ^~~~~~~~~~~~
+                           file_open
+../../userprog/syscall.c:92:27: warning: initialization makes pointer from integer without a cast [-Wint-conversion]
+../../userprog/syscall.c:93:2: warning: implicit declaration of function ‘lock_release’; did you mean ‘list_reverse’? [-Wimplicit-function-declaration]
+  lock_release(&filesys_lock);
+  ^~~~~~~~~~~~
+  list_reverse
+../../userprog/syscall.c:101:12: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+  handler = malloc(sizeof(struct file_handle));
+            ^~~~~~
+../../userprog/syscall.c:101:12: warning: incompatible implicit declaration of built-in function ‘malloc’
+../../userprog/syscall.c:101:12: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:113:22: warning: no previous prototype for ‘get_file_handle’ [-Wmissing-prototypes]
+ struct file_handle * get_file_handle(int fd){
+                      ^~~~~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_close’:
+../../userprog/syscall.c:138:2: warning: implicit declaration of function ‘free’ [-Wimplicit-function-declaration]
+  free(handle);
+  ^~~~
+../../userprog/syscall.c:138:2: warning: incompatible implicit declaration of built-in function ‘free’
+../../userprog/syscall.c:138:2: note: include ‘<stdlib.h>’ or provide a declaration of ‘free’
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:141:5: warning: no previous prototype for ‘syscall_filesize’ [-Wmissing-prototypes]
+ int syscall_filesize(struct intr_frame *itf, int fd){
+     ^~~~~~~~~~~~~~~~
+../../userprog/syscall.c:152:6: warning: no previous prototype for ‘syscall_seek’ [-Wmissing-prototypes]
+ bool syscall_seek(struct intr_frame *itf, int fd, int offset){
+      ^~~~~~~~~~~~
+../../userprog/syscall.c:163:5: warning: no previous prototype for ‘syscall_tell’ [-Wmissing-prototypes]
+ int syscall_tell(struct intr_frame *itf, int fd){
+     ^~~~~~~~~~~~
+../../userprog/syscall.c:174:6: warning: no previous prototype for ‘syscall_read’ [-Wmissing-prototypes]
+ bool syscall_read(struct intr_frame *itf, int fd, const void *buffer, int size){
+      ^~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_read’:
+../../userprog/syscall.c:184:15: warning: initialization discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  char * str = buffer;
+               ^~~~~~
+../../userprog/syscall.c:187:15: warning: implicit declaration of function ‘input_getc’ [-Wimplicit-function-declaration]
+    *(str++) = input_getc();
+               ^~~~~~~~~~
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:197:6: warning: no previous prototype for ‘syscall_write’ [-Wmissing-prototypes]
+ bool syscall_write(struct intr_frame *itf, int fd, const void *buffer, int size){
+      ^~~~~~~~~~~~~
+../../userprog/syscall.c:216:6: warning: no previous prototype for ‘syscall_create’ [-Wmissing-prototypes]
+ bool syscall_create(struct intr_frame * itf, const char* name, int initial_size){
+      ^~~~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_create’:
+../../userprog/syscall.c:223:14: warning: implicit declaration of function ‘filesys_create’; did you mean ‘thread_create’? [-Wimplicit-function-declaration]
+  itf ->eax = filesys_create((char*)name, initial_size);
+              ^~~~~~~~~~~~~~
+              thread_create
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:227:6: warning: no previous prototype for ‘syscall_remove’ [-Wmissing-prototypes]
+ bool syscall_remove(struct intr_frame *itf, const char* name){
+      ^~~~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_remove’:
+../../userprog/syscall.c:233:15: warning: implicit declaration of function ‘filesys_remove’; did you mean ‘list_remove’? [-Wimplicit-function-declaration]
+  itf -> eax = filesys_remove((char*)name);
+               ^~~~~~~~~~~~~~
+               list_remove
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:239:6: warning: no previous prototype for ‘syscall_halt’ [-Wmissing-prototypes]
+ void syscall_halt(struct intr_frame *f){
+      ^~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_halt’:
+../../userprog/syscall.c:239:38: warning: unused parameter ‘f’ [-Wunused-parameter]
+ void syscall_halt(struct intr_frame *f){
+                                      ^
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:245:6: warning: no previous prototype for ‘syscall_exit’ [-Wmissing-prototypes]
+ void syscall_exit(struct intr_frame *f,int status){
+      ^~~~~~~~~~~~
+../../userprog/syscall.c:253:6: warning: no previous prototype for ‘syscall_exec’ [-Wmissing-prototypes]
+ void syscall_exec(struct intr_frame *f,const char * cmd_line){
+      ^~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_exec’:
+../../userprog/syscall.c:257:19: warning: implicit declaration of function ‘process_execute’ [-Wimplicit-function-declaration]
+  f->eax=(uint32_t)process_execute(cmd_line);
+                   ^~~~~~~~~~~~~~~
+../../userprog/syscall.c: At top level:
+../../userprog/syscall.c:262:6: warning: no previous prototype for ‘syscall_wait’ [-Wmissing-prototypes]
+ void syscall_wait(struct intr_frame *f,int pid){
+      ^~~~~~~~~~~~
+../../userprog/syscall.c: In function ‘syscall_wait’:
+../../userprog/syscall.c:263:19: warning: implicit declaration of function ‘process_wait’; did you mean ‘syscall_wait’? [-Wimplicit-function-declaration]
+  f->eax=(uint32_t)process_wait(pid);
+                   ^~~~~~~~~~~~
+                   syscall_wait
+../../userprog/syscall.c: In function ‘syscall_open’:
+../../userprog/syscall.c:112:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+../../userprog/syscall.c: In function ‘syscall_remove’:
+../../userprog/syscall.c:235:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+In file included from ../../threads/thread.h:7:0,
+                 from ../../userprog/tss.c:5:
+../../threads/real.h:7:9: warning: conflicting types for built-in function ‘trunc’ [-Wbuiltin-declaration-mismatch]
+ int32_t trunc(struct realnum x);
+         ^~~~~
+../../threads/real.h:8:9: warning: conflicting types for built-in function ‘round’ [-Wbuiltin-declaration-mismatch]
+ int32_t round(struct realnum x);
+         ^~~~~
+ar: 正在创建 libc.a
+../../tests/userprog/no-vm/multi-oom.c: In function ‘consume_some_resources_and_die’:
+../../tests/userprog/no-vm/multi-oom.c:75:32: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         *(volatile int *) NULL = 42;
+         ~~~~~~~~~~~~~~~~~~~~~~~^~~~
+../../tests/userprog/no-vm/multi-oom.c:77:7: note: here
+       case 1:
+       ^~~~
+../../tests/userprog/no-vm/multi-oom.c:84:20: warning: this statement may fall through [-Wimplicit-fallthrough=]
+         *PHYS_BASE = 42;
+         ~~~~~~~~~~~^~~~
+../../tests/userprog/no-vm/multi-oom.c:86:7: note: here
+       case 4:
+       ^~~~
+make[1]: 警告：检测到时钟错误。您的创建可能是不完整的。
