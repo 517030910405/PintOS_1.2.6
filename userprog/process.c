@@ -29,6 +29,9 @@ tid_t
 process_execute (const char *file_name) 
 {
   //printf("created:\n");
+  // struct lock this_file_lock;
+  uint64_t args[2];
+  // lock_init(&this_file_lock);
   char *fn_copy,*fn_copy2;
   tid_t tid;
 	//struct lock mylock;
@@ -50,7 +53,9 @@ process_execute (const char *file_name)
       break;
     }
   /* Create a new thread to execute FILE_NAME. */
-  tid = thread_create (fn_copy2, PRI_DEFAULT, start_process, fn_copy);
+  //args[0] = fn_copy;
+  //args[1] = &this_file_lock;
+  tid = thread_create (fn_copy2, thread_current()->priority + 1, start_process, fn_copy);
   
   if (tid == TID_ERROR){
     palloc_free_page (fn_copy);
@@ -59,6 +64,8 @@ process_execute (const char *file_name)
   //while(1);
   //timer_sleep(1);
   for (int i=1;i<=100000000;++i);
+  // lock_acquire(&this_file_lock);
+  // lock_release(&this_file_lock);
   return tid;
 }
 
@@ -67,6 +74,8 @@ process_execute (const char *file_name)
 static void
 start_process (void *file_name_)
 {
+	//void *file_name = ((uint64_t*)args)[0];
+	//struct lock * mylock = ((uint64_t*)args)[1];
   char *file_name = file_name_;
   struct intr_frame if_;
   bool success;
