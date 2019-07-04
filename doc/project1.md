@@ -24,7 +24,7 @@ struct thread
     int priority;                       /* Priority. */
     struct list_elem allelem;           /* List element for all threads list. */
 
-	uint64_t sleep_until;
+    uint64_t sleep_until;
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
 
@@ -37,18 +37,18 @@ struct thread
     unsigned magic;                     /* Detects stack overflow. */
     int nice;
     struct realnum recent_cpu;
-	//TODO: 
-	//uint64_t sleep_until;
-	struct lock *wait_lock;
-	int donation;						/* This is the donation value */
-	uint8_t uses_donation;
-	//:TODO
-	//Project2:
-	int return_value;
-	//:Project2
-	
-	//struct lock 
-	
+    //TODO: 
+    //uint64_t sleep_until;
+    struct lock *wait_lock;
+    int donation;                       /* This is the donation value */
+    uint8_t uses_donation;
+    //:TODO
+    //Project2:
+    int return_value;
+    //:Project2
+    
+    //struct lock 
+    
   };
 
 /* If false (default), use priority scheduler.
