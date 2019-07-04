@@ -14,47 +14,47 @@
 
 #### DATA STRUCTURES
 
-struct thread
-  {
-    /* Owned by thread.c. */
-    tid_t tid;                          /* Thread identifier. */
-    enum thread_status status;          /* Thread state. */
-    char name[16];                      /* Name (for debugging purposes). */
-    uint8_t *stack;                     /* Saved stack pointer. */
-    int priority;                       /* Priority. */
-    struct list_elem allelem;           /* List element for all threads list. */
+    struct thread
+      {
+        /* Owned by thread.c. */
+        tid_t tid;                          /* Thread identifier. */
+        enum thread_status status;          /* Thread state. */
+        char name[16];                      /* Name (for debugging purposes). */
+        uint8_t *stack;                     /* Saved stack pointer. */
+        int priority;                       /* Priority. */
+        struct list_elem allelem;           /* List element for all threads list. */
 
-    uint64_t sleep_until;
-    /* Shared between thread.c and synch.c. */
-    struct list_elem elem;              /* List element. */
+        uint64_t sleep_until;
+        /* Shared between thread.c and synch.c. */
+        struct list_elem elem;              /* List element. */
 
-#ifdef USERPROG
-    /* Owned by userprog/process.c. */
-    uint32_t *pagedir;                  /* Page directory. */
-#endif
+    #ifdef USERPROG
+        /* Owned by userprog/process.c. */
+        uint32_t *pagedir;                  /* Page directory. */
+    #endif
 
-    /* Owned by thread.c. */
-    unsigned magic;                     /* Detects stack overflow. */
-    int nice;
-    struct realnum recent_cpu;
-    //TODO: 
-    //uint64_t sleep_until;
-    struct lock *wait_lock;
-    int donation;                       /* This is the donation value */
-    uint8_t uses_donation;
-    //:TODO
-    //Project2:
-    int return_value;
-    //:Project2
-    
-    //struct lock 
-    
-  };
+        /* Owned by thread.c. */
+        unsigned magic;                     /* Detects stack overflow. */
+        int nice;
+        struct realnum recent_cpu;
+        //TODO: 
+        //uint64_t sleep_until;
+        struct lock *wait_lock;
+        int donation;                       /* This is the donation value */
+        uint8_t uses_donation;
+        //:TODO
+        //Project2:
+        int return_value;
+        //:Project2
+        
+        //struct lock 
+        
+      };
 
-/* If false (default), use priority scheduler.
-   If true, use multi-level feedback queue scheduler.
-   Controlled by kernel command-line option "-o mlfqs". */
-/* Lock. */
+    /* If false (default), use priority scheduler.
+       If true, use multi-level feedback queue scheduler.
+       Controlled by kernel command-line option "-o mlfqs". */
+    /* Lock. */
 
 ### A. ALARM CLOCK  
 
